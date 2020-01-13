@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 //-----------------------------------------------------------------------------
-// src/datastructures/stack/Stack.js
+// src/datastructures/stack/stack-array.js
 //-----------------------------------------------------------------------------
 
 /**
@@ -9,7 +9,7 @@
  * same end, the top. The Stack class is a simple implementation using the
  * JavaScript Array.
  */
-class Stack {
+class StackArray {
   constructor() {
     this.data = []
   }
@@ -68,10 +68,10 @@ class Stack {
     this.data = []
   }
 
-  print = () => {
-    console.log(`Stack= `, this.data)
+  toString = () => {
+    return this.data.toString()
   }
 }
 
-// Export the Stack
-export default Stack
+// Export the StackArray
+export default StackArray

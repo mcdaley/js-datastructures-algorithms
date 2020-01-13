@@ -1,12 +1,12 @@
 //-----------------------------------------------------------------------------
-// src/datastructures/stack/Stack.test.js
+// src/datastructures/stack/stack-array.test.js
 //-----------------------------------------------------------------------------
-import Stack from './Stack'
+import StackArray from './stack-array'
 
-describe('Stack', () => {
+describe('StackArray', () => {
   let stack = null
   beforeEach( () => {
-    stack = new Stack()
+    stack = new StackArray()
     stack.push('One')
     stack.push('Two')
     stack.push('Three')
@@ -32,7 +32,7 @@ describe('Stack', () => {
     })
 
     it('Returns null when the stack is empty', () => {
-      let emptyStack = new Stack()
+      let emptyStack = new StackArray()
       expect(emptyStack.pop()).toBe(null)
     })
   })
@@ -44,7 +44,7 @@ describe('Stack', () => {
     })
 
     it('Returns null when the stack is empty', () => {
-      let emptyStack = new Stack()
+      let emptyStack = new StackArray()
       expect(emptyStack.peek()).toBe(null)
     })
   })
@@ -55,7 +55,7 @@ describe('Stack', () => {
     })
 
     it('Returns true for an empty stack', () => {
-      let emptyStack = new Stack()
+      let emptyStack = new StackArray()
       expect(emptyStack.isEmpty()).toBe(true)
     })
   })
@@ -77,6 +77,12 @@ describe('Stack', () => {
       stack.clear()
       expect(stack.size()).toBe(0)
       expect(stack.data).toEqual([])
+    })
+  })
+
+  describe('ToString', () => {
+    it('Returns a string representation of the stack', () => {
+      expect(stack.toString()).toEqual("One,Two,Three")
     })
   })
 })
