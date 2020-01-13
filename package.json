@@ -1,0 +1,25 @@
+{
+  "name": "js-datastructures-algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Michael Daley <mike@mcdaley.com> (https://www.mcdaley.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.0",
+    "@babel/core": "^7.8.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.0",
+    "@babel/preset-env": "^7.8.2",
+    "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+ }
+}
