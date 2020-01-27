@@ -17,5 +17,10 @@ A **linked list** store a sequential collection of elements, but unlike arrays, 
 
 ### Double Linked List
 
+## Sets
+A **set** is a collection of items that are unordered and consists of unique elements. This data structures uses the same mathematical concept as finite sets, but it is applied to a computer science data structure.
+
+Sets also have some basic operations, such as union, intersection, and difference.
+
 ## Algorithms
 
