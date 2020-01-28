@@ -69,6 +69,83 @@ export class Set {
   values = () => {
     return Object.values(this.items)
   }
+
+  /**
+   * Given 2 sets, returns a new set of elements from both sets.
+   * @param  {Set} otherSet
+   * @return {Set} Union of 2 sets.
+   */
+  union = (otherSet) => {
+    let unionSet = new Set()
+    this.values().forEach( value => unionSet.add(value) )
+    otherSet.values().forEach( (value) => {
+      if (!unionSet.has(value)) {
+        unionSet.add(value)
+      }
+    })
+
+    return unionSet
+  }
+
+  /**
+   * Given 2 sets, returns a new set with the elements that exist in both sets.
+   * @param  {Set} otherSet
+   * @return {Set} Intersection of 2 sets.
+   */
+  intersection = (otherSet) => {
+    let intersectionSet = new Set()
+    
+    this.values().forEach( (value) => {
+      if (otherSet.has(value)) {
+        intersectionSet.add(value)
+      }
+    })
+
+    return intersectionSet
+  }
+
+  /**
+   * Given 2 sets, returns a new a set with all the elements that exist in the
+   * 1st set and do not exist in the 2nd set.
+   * @param  {Set} otherSet
+   * @return {Set} Difference between the sets.
+   */
+  difference = (otherSet) => {
+    let differenceSet = new Set()
+    this.values().forEach( (value) => {
+      if (!otherSet.has(value)) {
+        differenceSet.add(value)
+      }
+    })
+
+    return differenceSet
+  }
+
+  /**
+   * Determines if the current (i.e., "this") is a subset of otherSet 
+   * passed in as a param.
+   * @param  {Set}     otherSet
+   * @return {Boolean} True is set is subset of otherSet
+   */
+  subset = (otherSet) => {
+    if(this.size() > otherSet.size()) return false
+
+    /**
+     * Verify if every value in this.items is in the otherSet. The 
+     * Array.prototype.every() method returns true of all the elements are
+     * in the set, otherwise it returns false.
+     */
+    let subset = this.values().every( (value) => {
+      if (otherSet.has(value)) {
+        return true
+      }
+      else {
+        return false
+      }
+    })
+
+    return subset
+  }
 }
 
 // Export the Set

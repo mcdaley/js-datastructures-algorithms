@@ -89,5 +89,71 @@ describe('Set', () => {
     let emptySet = new Set()
     expect(emptySet.values()).toEqual([])
   })
+
+  describe('Set Operations', () => {
+    let setA = null
+    let setB = null
+    beforeEach( () => {
+      setA = new Set()
+      setA.add('One'); setA.add('Two'); setA.add('Three'); setA.add('Four')
+
+      setB = new Set()
+      setB.add('Three'); setB.add('Four'); setB.add('Five'); setB.add('Six')
+    })
+
+    describe('union', () => {
+      it('Returns the combined set', () => {
+        let unionSet        = setA.union(setB)
+        let expectedResults = ['One', 'Two', 'Three', 'Four', 'Five', 'Six']
+        
+        expect(unionSet.size()).toBe(6)
+        expectedResults.forEach( el => {
+          expect(unionSet.values().includes(el)).toBe(true)
+        })
+      })
+    })
+
+    describe('intersection', () => {
+      it('Returns the elements in both sets', () => {
+        let intersectionSet = setA.intersection(setB)
+        let expectedResults = ['Three', 'Four']
+
+        expect(intersectionSet.size()).toBe(2)
+        expectedResults.forEach( (el) => {
+          expect(intersectionSet.values().includes(el)).toBe(true)
+        })
+      })
+    })
+
+    describe('difference', () => {
+      it('Returns the difference of the sets', () => {
+        let differenceSet   = setA.difference(setB)
+        let expectedResults = ['One', 'Two']
+
+        expect(differenceSet.size()).toBe(2)
+        expectedResults.forEach( (el) => {
+          expect(differenceSet.values().includes(el)).toBe(true)
+        })
+      })
+    })
+
+    describe('subset', () => {
+      it('Returns true if set is a subset', () => {
+        let validSubset = new Set()
+        let elements    = ['One', 'Two', 'Three', 'Four', 'Five', 'Six']
+        elements.forEach( el => validSubset.add(el))
+
+        expect(setA.subset(validSubset)).toBe(true)
+      })
+
+      it('Returns false if set is not a subset', () => {
+        let invalidSubset = new Set()
+        let elements      = ['One', 'Eleven', 'Twelve']
+        elements.forEach( el => invalidSubset.add(el) )
+
+        expect(setA.subset(invalidSubset)).toBe(false)
+      })
+    })
+  })
 })
 
