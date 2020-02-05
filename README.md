@@ -22,5 +22,11 @@ A **set** is a collection of items that are unordered and consists of unique ele
 
 Sets also have some basic operations, such as union, intersection, and difference.
 
+## Hashes
+
+### Dictionary
+
+### Hash Table
+
 ## Algorithms
 
