@@ -28,5 +28,7 @@ Sets also have some basic operations, such as union, intersection, and differenc
 
 ### Hash Table
 
+### Separate Chaining Hash Table
+
 ## Algorithms
 

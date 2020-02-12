@@ -140,6 +140,13 @@ export default class LinkedList {
   }
 
   /**
+   * Return the head of the list.
+   */
+  getHead = () => {
+    return this.head
+  }
+
+  /**
    * Returns the index of an element in the list, if the element is not in 
    * the list it returns -1.
    * @param   {Object}  element
